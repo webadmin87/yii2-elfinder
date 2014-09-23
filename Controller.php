@@ -28,7 +28,7 @@ class Controller extends BaseController{
     public $disabledCommands = ['netmount'];
 
     public function isAvailable(){
-        if($this->access == '*' || Yii::$app->user->checkAccess($this->access)){
+        if($this->access == '*' || Yii::$app->user->can($this->access)){
             if(!empty($this->options['roots']))
                 return true;
         }
